@@ -11,12 +11,20 @@
             background-color: violet;
             color: #f6f1e3; /* Blanco hueso */
         }
-        h1 {
+        .cover {
             text-align: center;
             padding: 50px 0;
             font-size: 3em;
+            animation: fadeIn 1s forwards;
+            opacity: 1;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .content {
+            display: none; /* Oculta el contenido inicialmente */
             padding: 20px;
             line-height: 1.6;
         }
@@ -26,13 +34,17 @@
             padding: 20px;
         }
         iframe {
+            width: 80%; /* Ajusta el ancho según sea necesario */
+            height: 600px; /* Ajusta la altura según sea necesario */
             max-width: 100%;
-            height: 400px; /* Ajusta la altura según sea necesario */
         }
     </style>
 </head>
 <body>
-    <h1>Películas que Revolucionaron el Cine</h1>
+    <div class="cover">
+        <h1>Películas que Revolucionaron el Cine</h1>
+    </div>
+
     <div class="content">
         <p>Aquí tienes una lista de películas que marcaron un antes y un después en la historia de la cinematografía por sus innovaciones técnicas, narrativas y estéticas:</p>
         
@@ -78,6 +90,15 @@
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/S6vDnwa3MaA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+    <script>
+        // Espera un tiempo antes de mostrar el contenido
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.content').style.display = 'block'; // Muestra el contenido
+            }, 3000); // Espera 3 segundos
+        }
+    </script>
 </body>
 </html>
 
