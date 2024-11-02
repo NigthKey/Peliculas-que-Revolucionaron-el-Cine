@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #E6E6FA; /* Lila */
-            color: #F5F5DC; /* Blanco hueso */
+            color: #000000; /* Negro */
         }
         .header {
             text-align: center;
@@ -22,6 +22,7 @@
             padding: 20px;
             margin: 20px;
             border-radius: 10px;
+            display: none; /* Oculta el contenido al cargar */
         }
         iframe {
             width: 100%;
@@ -29,6 +30,11 @@
             border: none;
         }
     </style>
+    <script>
+        window.onload = function() {
+            document.querySelector('.content').style.display = 'block'; // Muestra el contenido al cargar la página
+        }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -74,7 +80,7 @@
     </div>
     <div class="content">
         <h2>Video relacionado:</h2>
-        <iframe src="https://www.youtube.com/embed/S6vDnwa3MaA" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     </div>
 </body>
 </html>
